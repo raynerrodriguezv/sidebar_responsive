@@ -25,6 +25,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: all .6s ease;
 }
 
 .sidebar .uil{
@@ -41,11 +42,21 @@
 .logo{
     display: flex;
     align-items: center;
+    white-space: nowrap;
+    transition: all .5s ease;
 }
 
 .logo p{
     margin-left: 6px;
     font-size: 18px;
+}
+
+.top-row .hamburger{
+    cursor: pointer;
+}
+
+.top-row .uil{
+     font-size: 26px;
 }
 
 /* middle row started */
@@ -74,15 +85,20 @@
     transition: all .5s ease
 }
 
-.middle-row li a:hover{
+.middle-row .links a:hover{
     background-color: #fff;
     color: #333
 }
 
 .middle-row li a p{
     margin-left: 12px;
+    transition: all .5s ease;
 }
 
+.middle-row .search-bar{
+    background-color: rgba(255, 255, 255, 0.236);
+    border-radius: 10px;
+}
 
 
 .middle-row .search-bar input{
@@ -96,5 +112,57 @@
 
 ::placeholder{
     color: #fff;
+
 }
+
+
+
 /* botton row started */
+
+.botton-row{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.236);
+    border-radius: 10px;
+    padding: 0 12px;
+}
+
+
+.botton-row .uil-setting{
+    cursor: pointer
+}
+
+.botton-row .uil{
+    font-size: 26px;
+}
+
+
+
+/* Active sidebar css */
+
+.active{
+    width: 80px;
+    padding: 20px 15px;
+}
+
+.active .top-row{
+    justify-content: center;
+}
+
+.active .top-row .logo{
+    display: none;
+    transition: all .5s ease;
+}
+
+
+.active .middle-row li a p{
+    display: none;
+}
+
+.active .middle-row li a{
+    justify-content: center;
+    padding: 0 10px;
+}
