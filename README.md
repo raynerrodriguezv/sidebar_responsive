@@ -1,1 +1,3 @@
-# sidebar_responsive primer arranque rama principal
+## sidebar_responsive primer arranque 
+
+14 40
