@@ -6,14 +6,14 @@
 
 @font-face {
     font-family: poppins;
-    src: url(./Fonts/poppins-Medium.ttf);
+    src: url(./fonts/Poppins-Medium.ttf);
 }
 
 .main{
     width: 100%;
     height: 100vh;
     background-color: #fff;
-    font-family: poppins;
+    font-family: poppins, Poppins;
 }
 
 .sidebar{
@@ -51,7 +51,7 @@
     font-size: 18px;
 }
 
-.top-row .hamburger{
+.top-row .hamburger + .close{
     cursor: pointer;
 }
 
@@ -59,6 +59,10 @@
      font-size: 26px;
 }
 
+
+.top-row .hamburger{
+    display: none;   /* este me quita el icono de hamburger*/
+}
 /* middle row started */
 
 .middle-row{
@@ -68,6 +72,7 @@
 
 .middle-row li{
     list-style: none;
+    position: relative;
 }
 
 .middle-row li a {
@@ -115,6 +120,31 @@
 
 }
 
+/* fuera del siderbar */
+
+.middle-row li .outter-name{
+    position: relative;
+    bottom: 50%;
+    left: 160%;
+    transform: translateY(50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 10px;
+    white-space: nowrap; /* pequena separacion */
+    transition: all .6s ease;
+    opacity: 0;  /* para ver texto quita la opacidad */
+}
+
+
+.active .middle-row li:hover .outter-name{
+    opacity: 1;
+    
+}
+
+.active .botton-row p{
+    display: none;
+}
 
 
 /* botton row started */
@@ -139,7 +169,10 @@
     font-size: 26px;
 }
 
-
+.botton-row p{
+    white-space: nowrap;
+    transition: all .5s ease;
+}
 
 /* Active sidebar css */
 
@@ -164,5 +197,13 @@
 
 .active .middle-row li a{
     justify-content: center;
-    padding: 0 10px;
+    /* padding: 0 10px; */
+}
+
+.active .top-row .close{
+    display: none;
+}
+
+.active .top-row .hamburger{
+    display: block;
 }
